@@ -62,8 +62,8 @@ const App: Component = () => {
         viewBox="-100 -100 200 200"
         preserveAspectRatio="xMidYMid meet"
       >
-        <RadialGraph color={interpolateSinebow} scale={2.5} />
-        <RadialGraph color={interpolateInferno} scale={1.5} />
+        <RadialGraph color={interpolateSinebow} scale={.5} />
+        <RadialGraph color={interpolateInferno} scale={1.0} />
       </svg>
     </div>
   );

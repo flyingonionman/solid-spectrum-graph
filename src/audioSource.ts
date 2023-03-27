@@ -3,7 +3,7 @@ import { createSignal } from "solid-js";
 const [rawData, setRawData] = createSignal<number[]>([]);
 
 export const startFromFile = async () => {
-  const res = await fetch("/EpicTrailer.mp3");
+  const res = await fetch("/papsmear.mp3");
   const byteArray = await res.arrayBuffer();
 
   const context = new AudioContext();
@@ -16,7 +16,7 @@ export const startFromFile = async () => {
   analyzer.fftSize = 512;
 
   source.connect(analyzer);
-  // analyzer.connect(context.destination);
+  analyzer.connect(context.destination);
   source.start();
 
   const bufferLength = analyzer.frequencyBinCount;
